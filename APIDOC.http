@@ -1,0 +1,150 @@
+#api call for admin
+###
+
+POST  http://127.0.0.1:8000/account/admin/register/
+Content-Type: application/json
+
+{
+    "username":"admin1",
+    "email":"admin1@gmail.com",
+    "password":"admin1123",
+    "phone":"2355679570"
+}
+
+#api call for student
+###
+
+POST http://127.0.0.1:8000/account/student/register/
+Content-Type: application/json
+
+{
+    "username":"student",
+    "email":"student@gmail.com",
+    "password":"student123",
+    "phone":"2955674570"
+}
+
+#
+###
+
+POST  http://127.0.0.1:8000/film/admin/token/
+Content-Type: application/json
+
+{
+    "username":"admin1",
+    "password":"admin1123"
+}
+
+#api call for list
+###
+
+GET http://127.0.0.1:8000/film/movie/
+Accept: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+#
+###
+
+POST http://127.0.0.1:8000/film/movie/
+Content-Type: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "title": "Manjummel Boys",
+    "description": "A group of friends go on an adventurous trip.",
+    "genre": "Adventure",
+    "language": "ML",
+    "release_date": "2024-02-22",
+    "duration": 135,
+    "start_time": "10:00:00",
+    "rating": 8.5,
+    "director": "Chidambaram"
+}
+
+#
+###
+
+GET http://127.0.0.1:8000/film/movie/1/
+Accept: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+#
+###
+
+PUT  http://127.0.0.1:8000/film/movie/2/
+Content-Type: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "title": "Varavu",
+    "description": "A revenge for his brother .",
+    "genre": "Action",
+    "language": "ML",
+    "release_date": "2026-07-16",
+    "duration": 100,
+    "start_time": "10:00:00",
+    "rating": 8.5,
+    "director": "shaji kailas"
+}
+
+#
+###
+
+DELETE  http://127.0.0.1:8000/film/movie/3/
+Content-Type: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "id":3
+}
+
+#====song====#
+#
+###
+
+POST  http://127.0.0.1:8000/music/movie/1/song/
+Content-Type: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "title": "adavi gulkam",
+    "singer": "nanjiyamma",
+    "album": "poratam",
+    "language": "TE",
+    "duration": 5,
+    "start_time": "10:00:00"
+}
+
+#
+###
+
+GET http://127.0.0.1:8000/music/movie/1/song/1
+Accept: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+#
+###
+
+PUT  http://127.0.0.1:8000/music/movie/1/song/1
+Content-Type: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "title": "adavi gulkam",
+    "singer": "nanjiyamma",
+    "album": "poratam",
+    "language": "TE",
+    "duration": 5,
+    "start_time": "10:00:00"
+}
+
+#
+###
+
+DELETE http://127.0.0.1:8000/music/movie/1/song/1
+Content-Type: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "id":1
+}
