@@ -118,14 +118,14 @@ Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
 #
 ###
 
-GET http://127.0.0.1:8000/music/movie/1/song/1
+GET http://127.0.0.1:8000/music/song/6
 Accept: application/json
 Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
 
 #
 ###
 
-PUT  http://127.0.0.1:8000/music/movie/1/song/1
+PUT  http://127.0.0.1:8000/music/song/6
 Content-Type: application/json
 Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
 
@@ -147,4 +147,48 @@ Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
 
 {
     "id":1
+}
+
+#====review=====#
+
+#api call for list 
+###
+
+POST   http://127.0.0.1:8000/rev/song/1/review/
+Content-Type:application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "message":"Good movie",
+    "rating":4.5
+}
+
+#
+###
+
+GET http://127.0.0.1:8000/rev/review/2
+Accept: application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+#
+###
+
+PUT http://127.0.0.1:8000/rev/review/2
+Content-Type:application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "message":"Blockbuster movie",
+    "rating":6.0
+}
+
+#
+###
+
+DELETE http://127.0.0.1:8000/rev/review/3
+Content-Type:application/json
+Authorization: Token ad9ad3e305766f65b39adffc98d586af0294cd6c
+
+{
+    "id":3
 }

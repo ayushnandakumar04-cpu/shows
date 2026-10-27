@@ -19,7 +19,6 @@ class MoviesListCreateView(APIView):
     def post(self,request):
         form_data=request.data
         serializer = MoviesSerializer(data=form_data)
-
         if serializer.is_valid():
             serializer.save(created_by=request.user)
             return Response(serializer.data,status=201)
